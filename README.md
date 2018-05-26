@@ -17,7 +17,7 @@ npm install
 ### Running
 
 ```sh
-npm run serve
+npm start
 ```
 
 ### Using the app
