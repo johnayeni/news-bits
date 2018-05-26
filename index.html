@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>NEWS BITS</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#3f51b5" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="css/material.min.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <!-- The manifest file contains details about the app so that it can be installed -->
+  <link rel="manifest" href="manifest.json">
+</head>
+
+<body>
+  <!-- Always shows a header, even in smaller screens. -->
+  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <header class="mdl-layout__header">
+      <div class="mdl-layout__header-row">
+        <!-- Title -->
+        <span class="mdl-layout-title">NEWS BITS</span>
+      </div>
+    </header>
+    <main class="mdl-layout__content">
+      <div class="page-content vertical-container" id="contentBox">
+        <!-- Your content goes here -->
+      </div>
+    </main>
+
+    <!-- snackbar -->
+    <div id="snackbar"></div>
+  </div>
+
+  <script src="js/material.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js" defer></script>
+  <script src="https://code.jquery.com/jquery-1.11.1.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/idb@2.1.2/lib/idb.min.js" defer></script>
+
+  <!-- controller js file -->
+  <script src="js/controller.js" defer></script>
+
+  <!-- main app javascript file -->
+  <script src="js/app.js" defer></script>
+</body>
+
+</html>

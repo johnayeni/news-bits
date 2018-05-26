@@ -1,0 +1,16 @@
+{
+  "name": "news-bit",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "John Ayeni",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3",
+    "idb": "^2.1.2",
+    "serve-static": "^1.13.2",
+    "socket.io": "^2.1.1"
+  }
+}
