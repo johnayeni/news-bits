@@ -29,7 +29,7 @@ class Controller {
     }
 
     return idb.open('news-bits', 1, function(upgradeDb) {
-      var store = upgradeDb.createObjectStore('news', {
+      let store = upgradeDb.createObjectStore('news', {
         keyPath: 'id'
       });
       store.createIndex('by-date', 'date');
@@ -42,7 +42,7 @@ class Controller {
     this._dbPromise.then(function(db) {
       if (!db) return;
 
-      var tx = db
+      let tx = db
         .transaction('news')
         .objectStore('news')
         .index('by-date');
@@ -75,8 +75,8 @@ class Controller {
     this._dbPromise.then(function(db) {
       if (!db) return;
 
-      var tx = db.transaction('news', 'readwrite');
-      var store = tx.objectStore('news');
+      let tx = db.transaction('news', 'readwrite');
+      let store = tx.objectStore('news');
       content.forEach(function(item) {
         store.put(item);
       });

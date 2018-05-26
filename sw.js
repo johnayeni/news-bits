@@ -41,7 +41,7 @@ self.addEventListener('activate', function(event) {
   );
 });
 
-// intercpt requests
+// intercept requests
 self.addEventListener('fetch', function(event) {
   var requestUrl = new URL(event.request.url);
 
