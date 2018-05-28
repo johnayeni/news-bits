@@ -1,12 +1,12 @@
-const app = require('express')();
-const http = require('http').Server(app);
-const io = require('socket.io')(http);
-const serveStatic = require('serve-static');
-const port = 3000;
+var app = require('express')();
+var http = require('http').Server(app);
+var io = require('socket.io')(http);
+var serveStatic = require('serve-static');
+var port = 3000;
 
 // function to generate random content
 function getContent() {
-  let content = {};
+  var content = {};
   content.id = Math.floor(Math.random() * 100000);
   content.title = `News ${content.id}`;
   content.text =
@@ -19,9 +19,9 @@ app.use(serveStatic(__dirname + '/'));
 
 // return content based on the number needed
 app.get('/content/:num', (req, res) => {
-  let content = [];
+  var content = [];
 
-  for (let i = 0; i < Number(req.params.num); i++) {
+  for (var i = 0; i < Number(req.params.num); i++) {
     content.push(getContent());
   }
 

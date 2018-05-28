@@ -29,7 +29,7 @@ class Controller {
     }
 
     return idb.open('news-bits', 1, function(upgradeDb) {
-      let store = upgradeDb.createObjectStore('news', {
+      var store = upgradeDb.createObjectStore('news', {
         keyPath: 'id'
       });
       store.createIndex('by-date', 'date');
@@ -38,11 +38,11 @@ class Controller {
 
   // get content from indexedDB
   _showCachedNews() {
-    let Controller = this;
+    var Controller = this;
     this._dbPromise.then(function(db) {
       if (!db) return;
 
-      let tx = db
+      var tx = db
         .transaction('news')
         .objectStore('news')
         .index('by-date');
@@ -54,7 +54,7 @@ class Controller {
 
   // make a request to the server for content
   _makeRequest(num = 1) {
-    let Controller = this;
+    var Controller = this;
     $.ajax({
       url: `/content/${num}`,
       type: 'GET',
@@ -69,14 +69,14 @@ class Controller {
 
   // add new content to the page
   _addContent(content) {
-    let contentBox = $('#contentBox');
+    var contentBox = $('#contentBox');
 
     // before adding content to the page, store indexedDB
     this._dbPromise.then(function(db) {
       if (!db) return;
 
-      let tx = db.transaction('news', 'readwrite');
-      let store = tx.objectStore('news');
+      var tx = db.transaction('news', 'readwrite');
+      var store = tx.objectStore('news');
       content.forEach(function(item) {
         store.put(item);
       });
@@ -97,7 +97,7 @@ class Controller {
     });
 
     content.forEach(element => {
-      let newContent = `<div class="demo-card-wide mdl-card mdl-shadow--2dp">
+      var newContent = `<div class="demo-card-wide mdl-card mdl-shadow--2dp">
                         <div class="mdl-card__title">
                           <h2 class="mdl-card__title-text">${element.title}</h2>
                         </div>
@@ -116,7 +116,7 @@ class Controller {
   }
 
   _showToast(text) {
-    let snackbarContainer = document.querySelector('#snackbar');
+    var snackbarContainer = document.querySelector('#snackbar');
 
     snackbarContainer.innerHTML = text;
     // Add the "show" class to DIV
